@@ -19,7 +19,7 @@ namespace CatchButton
             System.Media.SystemSounds.Beep.Play();
 
             
-            score++; //score를 1 증가
+            score+=100; //score를 100 증가
 
             // 버튼 클릭 시 메시지 박스 표시
             MessageBox.Show(" 축하합니다 ~ ! ");
@@ -36,6 +36,9 @@ namespace CatchButton
 
         private void CatchmeButton_MouseEnter(object sender, EventArgs e)
         {
+            // 버튼이 이동하면(사용자가 클릭하지 못한 경우) 점수 감소
+            score -= 10; 
+
             //1. 난수 생성기 준비
             Random rd = new Random();
 
