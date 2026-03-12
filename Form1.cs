@@ -9,6 +9,11 @@ namespace CatchButton
 
         private void CatchmeButton_Click(object sender, EventArgs e)
         {
+            // 메시지박스가 표시될 때 소리 재생
+            System.Media.SystemSounds.Beep.Play();
+
+            // 버튼 클릭 시 메시지 박스 표시
+            MessageBox.Show(" 축하합니다 ~ ! ");
 
         }
 
@@ -24,7 +29,7 @@ namespace CatchButton
 
             //3. 랜덤 좌표 추출 (0 ~ 최대 가용치 사이)
             int nextX = rd.Next(0, maxX-CatchmeButton.Width);
-            int nextY = rd.Next(0, maxY-CatchmeButton.Height);
+            int nextY = rd.Next(0, maxY-CatchmeButton.Height);//버튼의 크기만큼 빼줘야 버튼이 폼 밖으로 나가지 않음
 
             //4. 위치 할당(새로운 Point 객체 생성)
             CatchmeButton.Location = new Point(nextX, nextY);
