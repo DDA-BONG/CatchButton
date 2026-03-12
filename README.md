@@ -10,6 +10,7 @@
   <img width="803" height="491" alt="image" src="https://github.com/user-attachments/assets/1e9b9543-bc88-4d07-9638-85b981649dc9" />
 
 - 2단계 코드의 실행 스크린샷
+<img width="1041" height="651" alt="image" src="https://github.com/user-attachments/assets/1d3946c6-1f2f-47c0-87be-635de74a6d7d" />
 
 - 3단계 코드의 실행 스크린샷
 
