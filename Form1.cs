@@ -16,7 +16,7 @@ namespace CatchButton
         private void CatchmeButton_Click(object sender, EventArgs e)
         {
             // 메시지박스가 표시될 때 소리 재생
-            System.Media.SystemSounds.Beep.Play();
+            System.Media.SystemSounds.Asterisk.Play();
 
 
             score += 100; //score를 100 증가
@@ -71,7 +71,7 @@ namespace CatchButton
 
             score -= 10; //마우스가 버튼을 놓치고 지나갈 때마다 점수를 10점씩 감소
 
-            System.Media.SystemSounds.Question.Play(); //버튼을 놓칠 때마다 소리 재생
+            System.Media.SystemSounds.Exclamation.Play(); //버튼을 놓칠 때마다 소리 재생
 
             //5. 시각적 피드백 (폼 제목 표시줄에 좌표 및 점수출력)
             this.Text = $"버튼위치 : ({nextX}, {nextY}), 점수 : [{score.ToString()}]";//점수는 문자열로 변환해서 출력
