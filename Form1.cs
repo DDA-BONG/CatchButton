@@ -24,8 +24,12 @@ namespace CatchButton
             // 버튼 클릭 시 메시지 박스 표시
             MessageBox.Show(" 축하합니다 ~ ! ");
 
-            CatchmeButton.Width -= 20; //버튼의 너비를 20씩 줄임
-            CatchmeButton.Height -= 20; //버튼의 높이를 20씩 줄임
+            int minSize = 20; //최소 버튼 크기 설정
+            int newWidth = Math.Max(minSize, (int)(CatchmeButton.Width * 0.9));
+            int newHeight = Math.Max(minSize, (int)(CatchmeButton.Height * 0.9)); //높이와 너비를 10%씩 줄이지만 최소 크기보다 작아지지 않도록 설정
+            CatchmeButton.Size = new Size(newWidth, newHeight); //높이와 너비를 버튼크기에 적용
+
+           
             
 
         }
