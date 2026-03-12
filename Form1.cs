@@ -23,8 +23,8 @@ namespace CatchButton
             int maxY = this.ClientSize.Height; 
 
             //3. 랜덤 좌표 추출 (0 ~ 최대 가용치 사이)
-            int nextX = rd.Next(0, maxX);
-            int nextY = rd.Next(0, maxY);
+            int nextX = rd.Next(0, maxX-CatchmeButton.Width);
+            int nextY = rd.Next(0, maxY-CatchmeButton.Height);
 
             //4. 위치 할당(새로운 Point 객체 생성)
             CatchmeButton.Location = new Point(nextX, nextY);
