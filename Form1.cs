@@ -1,16 +1,25 @@
+using static System.Net.Mime.MediaTypeNames;
+
 namespace CatchButton
 {
     public partial class Form1 : Form
     {
+        // 게임 점수 저장용 필드(기본값 0)
+        private int score = 0;
+
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void CatchmeButton_Click(object sender, EventArgs e)
         {
             // 메시지박스가 표시될 때 소리 재생
             System.Media.SystemSounds.Beep.Play();
+
+            
+            score++; //score를 1 증가
 
             // 버튼 클릭 시 메시지 박스 표시
             MessageBox.Show(" 축하합니다 ~ ! ");
@@ -25,21 +34,26 @@ namespace CatchButton
             //2. 가용 영역 계산 (버튼이 폼 테두리에 걸리지 않게 보호)
             // ClientSize는 타이틀 바와 테두리를 제외한 실제 흰 도화지 영역임
             int maxX = this.ClientSize.Width;
-            int maxY = this.ClientSize.Height; 
+            int maxY = this.ClientSize.Height;
 
             //3. 랜덤 좌표 추출 (0 ~ 최대 가용치 사이)
-            int nextX = rd.Next(0, maxX-CatchmeButton.Width);
-            int nextY = rd.Next(0, maxY-CatchmeButton.Height);//버튼의 크기만큼 빼줘야 버튼이 폼 밖으로 나가지 않음
+            int nextX = rd.Next(0, maxX - CatchmeButton.Width);
+            int nextY = rd.Next(0, maxY - CatchmeButton.Height);//버튼의 크기만큼 빼줘야 버튼이 폼 밖으로 나가지 않음
 
             //4. 위치 할당(새로운 Point 객체 생성)
             CatchmeButton.Location = new Point(nextX, nextY);
 
-            //5. 시각적 피드백 (폼 제목 표시줄에 좌표 출력)
-            this.Text = $"버튼위치 : ({nextX}, {nextY})";
+            //5. 시각적 피드백 (폼 제목 표시줄에 좌표 및 점수출력)
+            this.Text = $"버튼위치 : ({nextX}, {nextY}), 점수 : [{score.ToString()}]";//점수는 문자열로 변환해서 출력
 
 
 
 
+
+        }
+
+        private void Score_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
