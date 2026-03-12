@@ -91,6 +91,7 @@ namespace CatchButton
         {
             // 점수 초기화
             score = 0;
+            this.Text = $" 점수 : [{score.ToString()}]";
 
 
             // CatchmeButton 재활성화 및 크기/폰트 초기화
