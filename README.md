@@ -13,12 +13,19 @@
 ## 실행화면
 - 1단계 코드의 실행 스크린샷
   <img width="803" height="491" alt="image" src="https://github.com/user-attachments/assets/1e9b9543-bc88-4d07-9638-85b981649dc9" />
+  1. 마우스가 버튼 위로 이동하면 버튼의 위칠를 변경
+  2. 폼 제목에 버튼의 현재 x,y좌표를 표시
+  3. 버튼이 화면 밖으로 나가는 경우 방지
 
 - 2단계 코드의 실행 스크린샷
   <img width="1041" height="651" alt="image" src="https://github.com/user-attachments/assets/1d3946c6-1f2f-47c0-87be-635de74a6d7d" />
+  1. 버튼이 도망갈 때와 잡았을 때 효과음을 출력
+  2. 버튼을 잡았을 때 메시지 박스 출력
 
 - 3단계 코드의 실행 스크린샷
   <img width="796" height="488" alt="image" src="https://github.com/user-attachments/assets/b68181b9-cdbf-4a6f-9dd4-0ba8886566a3" />
+  1. 버튼을 클릭할 시 100점 득점, 놓칠 시 10점 감점 / 점수는 폼 제목에 표시
+  2. 클릭에 성공할 때 마다 버튼의 크기를 10%씩 축소
 
 - 4단계 코드의 실행 스크린샷
   게임오버가 된 경우
@@ -26,6 +33,8 @@
   
   다시시작을 눌러 게임이 리셋됨
   <img width="796" height="485" alt="image" src="https://github.com/user-attachments/assets/2ca8601f-9858-4bf4-bdc2-6e1605793291" />
+  1. 20번 놓치면 GameOver메시지를 출력 후 모든 버튼 비활성화
+  2. 다시시작 버튼을 활성화, 누르면 점수를 초기화하고 게임을 다시 시작
 
 
 
