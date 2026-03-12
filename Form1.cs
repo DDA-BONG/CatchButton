@@ -24,6 +24,10 @@ namespace CatchButton
             // 버튼 클릭 시 메시지 박스 표시
             MessageBox.Show(" 축하합니다 ~ ! ");
 
+            CatchmeButton.Width -= 20; //버튼의 너비를 20씩 줄임
+            CatchmeButton.Height -= 20; //버튼의 높이를 20씩 줄임
+            
+
         }
 
         private void CatchmeButton_MouseEnter(object sender, EventArgs e)
