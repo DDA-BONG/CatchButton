@@ -18,8 +18,8 @@ namespace CatchButton
             // 메시지박스가 표시될 때 소리 재생
             System.Media.SystemSounds.Beep.Play();
 
-            
-            score+=100; //score를 100 증가
+
+            score += 100; //score를 100 증가
 
             // 버튼 클릭 시 메시지 박스 표시
             MessageBox.Show(" 축하합니다 ~ ! ");
@@ -29,15 +29,30 @@ namespace CatchButton
             int newHeight = Math.Max(minSize, (int)(CatchmeButton.Height * 0.9)); //높이와 너비를 10%씩 줄이지만 최소 크기보다 작아지지 않도록 설정
             CatchmeButton.Size = new Size(newWidth, newHeight); //높이와 너비를 버튼크기에 적용
 
-           
-            
+
+
 
         }
 
         private void CatchmeButton_MouseEnter(object sender, EventArgs e)
         {
-            // 버튼이 이동하면(사용자가 클릭하지 못한 경우) 점수 감소
-            score -= 10; 
+
+            // 점수가 -200 이하로 내려가면 게임오버 처리: 메시지 출력 후 모든 버튼 비활성화
+            if (score <= -200)
+            {
+                MessageBox.Show("GameOver");
+                CatchmeButton.Enabled = false;
+                // RestartButton이 있으면 활성화
+                try
+                {
+                    RestartButton.Enabled = true;
+                }
+                catch
+                {
+                    // 무시
+                }
+                return; // 더 이상 버튼을 이동시키지 않음
+            }
 
             //1. 난수 생성기 준비
             Random rd = new Random();
@@ -54,6 +69,10 @@ namespace CatchButton
             //4. 위치 할당(새로운 Point 객체 생성)
             CatchmeButton.Location = new Point(nextX, nextY);
 
+            score -= 10; //마우스가 버튼을 놓치고 지나갈 때마다 점수를 10점씩 감소
+
+            System.Media.SystemSounds.Question.Play(); //버튼을 놓칠 때마다 소리 재생
+
             //5. 시각적 피드백 (폼 제목 표시줄에 좌표 및 점수출력)
             this.Text = $"버튼위치 : ({nextX}, {nextY}), 점수 : [{score.ToString()}]";//점수는 문자열로 변환해서 출력
 
@@ -64,6 +83,33 @@ namespace CatchButton
         }
 
         private void Score_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RestartButton_Click(object sender, EventArgs e)
+        {
+            // 점수 초기화
+            score = 0;
+
+
+            // CatchmeButton 재활성화 및 크기/폰트 초기화
+            CatchmeButton.Enabled = true;
+            CatchmeButton.Size = new Size(234, 155);
+
+
+            // Restart 버튼 비활성화
+            try
+            {
+                RestartButton.Enabled = false;
+            }
+            catch
+            {
+                // 무시
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
